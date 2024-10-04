@@ -1,7 +1,12 @@
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Microsoft Sans Serif", sans-serif;
 }
+
+body {
+    margin: 0;
+}
+
 nav {
     margin: 0;
     top: 0;
@@ -21,6 +26,12 @@ nav {
     font-weight: bold;
 }
 
+#nav-name * {
+    vertical-align: middle;
+    text-decoration: none;
+    color: white;
+}
+
 #nav-link {
     float: right;
     padding: 0 16px;
@@ -31,22 +42,23 @@ nav {
 }
 
 .profile {
-    left: 0;
-    top: 64px;
     width: 100%;
     height: calc(100vw / 3 * 2);
     max-height: 700px;
     vertical-align: middle;
     color: white;
+    line-height: min(calc(100vw / 3 * 2), 700px);
 }
 
 .profile label {
-    position: relative;
-    top: 50%;
-    left: 32px;
-    transform: translate(0, -50%);
+    margin-left: 32px;
     font-size: 9vw;
     font-weight: bold;
+    transition: all 0.2s;
+}
+
+.profile label:hover {
+    color:cyan;
 }
 
 .profile-background {
@@ -60,20 +72,50 @@ nav {
     width: calc(100% + 4px);
     height: calc((100vw / 3 * 2) + 8px);
     max-height: 700px;
-    z-index: 0;
+    z-index: -1;
 }
 
 .content {
     margin-top: 8px;
+    padding: 0 16px;
 }
 
-.con1 {
+#con1 {
     display: grid;
     grid-template-columns: 200px auto;
 }
 
+#con1 div:first-child {
+    font-size: 12px;
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
+
+#con1 div ul {
+    line-height: 24px;
+}
+
+#con1 div h2 {
+    margin: 16px 0 0 0 ;
+}
+
 #floppa1 {
     transform: scaleX(-1);
+    transition: all 0.2s ease;
+}
+
+#floppa1:hover {
+    transform: scaleX(1) rotate(-20deg);
+}
+
+#floppa1:active {
+    position: relative;
+    transform: scale(0.9);
+}
+
+#con2 {
+    padding: 0 16px 16px 16px;
 }
 
 #myfacebook {
@@ -114,10 +156,11 @@ nav {
 }
 
 footer {
-    position: static;
+    background-color: aliceblue;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     bottom: 0;
     left: 0;
     text-align: center;
+    padding: 8px;
 }
